@@ -412,6 +412,7 @@ export async function buildPluginApp(
       outfile: stagedJsPath,
       absWorkingDir: rootDir,
       bundle: true,
+      conditions: ["production"],
       metafile: dependencySources.length > 0,
       format: "esm",
       platform: "browser",
