@@ -9,6 +9,10 @@ created-at: "2026-10-31T02:23:46Z"
 origin:
   agent: "OpenAI Codex"
   codex-session-id: "01a18f9f-45cc-7a22-b949-604f05255d29"
+revision-history:
+  - timestamp: "2026-10-31T07:29:24Z"
+    bb-thread-id: "thr_b73m9a5jem"
+    summary: "Link the existing upstream freshness prerequisite and require user approval before official BB pull requests."
 Date Created: "2026-10-31"
 Date Updated: "2026-10-31"
 ---
@@ -31,11 +35,13 @@ Keep official source on `main` free of local policy and customisations. Keep pub
 
 ## Making a change
 
+Before starting or resuming work, follow the standing upstream freshness prerequisite in BBUP-1's comment dated 2026-10-04: check current versions and relevant upstream issues/PRs, and record whether the work is still needed. This check does not authorise implementation or upstream publication.
+
 Start an independent upstream contribution from clean `main`. Start dependent custom work from `downstream` only when it needs another local change; record that dependency. Use the project's branch naming and commit-provenance rules.
 
 Add meaningful tests with behavioural changes. Run the relevant Turbo checks and exercise the changed behaviour. Merge the reviewed change into `downstream` once it passes. Push task-owned commits to the fork under the applicable backup policy.
 
-Submit generally useful fixes upstream separately, without this procedure or unrelated customisations. Follow ../CONTRIBUTING.md, including contributor approval and prior maintainer alignment for features and UI changes. Local use need not wait for upstream acceptance.
+Discuss upstream suitability with the user; obtain approval before opening an official BB pull request. Submit approved, generally useful fixes upstream separately, without this procedure or unrelated customisations. Follow ../CONTRIBUTING.md, including contributor approval and prior maintainer alignment for features and UI changes. Local use need not wait for upstream acceptance.
 
 Record each retained fix's purpose, dependencies, upstream issue/PR and removal condition in its existing task or commit record. An accepted PR is not proof that our selected release includes it. Once the selected official release supplies the fix, reconcile the local equivalent and retest its behaviour; do not blindly reverse a duplicate patch.
 
